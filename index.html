@@ -39,15 +39,17 @@
     .doodle-container {
       position: fixed;
       top: 0; left: 0; right: 0; bottom: 0;
-      z-index: 998; /* 🚨 CHANGER: Pulled to the absolute front layer! */
-      font-size: 75px;
-      line-height: 2.6;
-      opacity: 0.08; /* Slightly lighter so it never blocks your actual text */
+      z-index: 998; 
+      font-size: 85px; /* Slightly bigger so you see the sketch lines */
+      line-height: 2.8;
+      opacity: 0.15; 
+      color: #bb86fc; /* 🪶 Forces them to look like they were drawn with a neon-purple gel pen! */
+      text-shadow: 0 0 8px rgba(187, 134, 252, 0.4);
       text-align: center;
       word-wrap: break-word;
-      pointer-events: none; /* Let's you click right through them! */
+      pointer-events: none; 
       user-select: none;
-      animation: squigglevision 0.35s infinite; 
+      animation: squigglevision 0.3s infinite; 
     }
 
     /* 🎬 THE HAND-DRAWN JITTER LOOP */
@@ -146,9 +148,9 @@
 <body>
   
   <div class="doodle-container">
-    🧶 💻 🧋 ⌨️ 🧶 🥤 🖥️ 🧶 ☕ 💻 🧊 🖱️ 🧶 💻 🧋 ⌨️ 🧶 🥤 🖥️ 🧶 ☕ 💻 🧊 🖱️
-    🧶 💻 🧋 ⌨️ 🧶 🥤 🖥️ 🧶 ☕ 💻 🧊 🖱️ 🧶 💻 🧋 ⌨️ 🧶 🥤 🖥️ 🧶 ☕ 💻 🧊 🖱️
-    🧶 💻 🧋 ⌨️ 🧶 🥤 🖥️ 🧶 ☕ 💻 🧊 🖱️ 🧶 💻 🧋 ⌨️ 🧶 🥤 🖥️ 🧶 ☕ 💻 🧊 🖱️
+    🪢 💻 ☕ ⚿ 🪢 🥤 🖥 🪢 ☕ 💻 ⚙ ⌨ 🪢 💻 ☕ ⚿ 🪢 🥤 🖥 🪢 ☕ 💻 ⚙ ⌨
+    🪢 💻 ☕ ⚿ 🪢 🥤 🖥 🪢 ☕ 💻 ⚙ ⌨ 🪢 💻 ☕ ⚿ 🪢 🥤 🖥 🪢 ☕ 💻 ⚙ ⌨
+    🪢 💻 ☕ ⚿ 🪢 🥤 🖥 🪢 ☕ 💻 ⚙ ⌨ 🪢 💻 ☕ ⚿ 🪢 🥤 🖥 🪢 ☕ 💻 ⚙ ⌨
   </div>
 
   <div id="app"></div>
@@ -166,16 +168,16 @@
   <svg style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg">
     <defs>
       <filter id="sketch-1">
-        <feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="2" seed="1" result="noise" />
-        <feDisplacementMap in="SourceGraphic" in2="noise" scale="6" xChannelSelector="R" yChannelSelector="G" />
+        <feTurbulence type="fractalNoise" baseFrequency="0.05" numOctaves="2" seed="2" result="noise" />
+        <feDisplacementMap in="SourceGraphic" in2="noise" scale="7" xChannelSelector="R" yChannelSelector="G" />
       </filter>
       <filter id="sketch-2">
-        <feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="2" seed="5" result="noise" />
-        <feDisplacementMap in="SourceGraphic" in2="noise" scale="5" xChannelSelector="R" yChannelSelector="G" />
+        <feTurbulence type="fractalNoise" baseFrequency="0.06" numOctaves="2" seed="7" result="noise" />
+        <feDisplacementMap in="SourceGraphic" in2="noise" scale="6" xChannelSelector="R" yChannelSelector="G" />
       </filter>
       <filter id="sketch-3">
-        <feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="2" seed="10" result="noise" />
-        <feDisplacementMap in="SourceGraphic" in2="noise" scale="6" xChannelSelector="R" yChannelSelector="G" />
+        <feTurbulence type="fractalNoise" baseFrequency="0.05" numOctaves="2" seed="12" result="noise" />
+        <feDisplacementMap in="SourceGraphic" in2="noise" scale="7" xChannelSelector="R" yChannelSelector="G" />
       </filter>
     </defs>
   </svg>
