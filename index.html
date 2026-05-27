@@ -7,26 +7,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/dark.css">
   
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap" rel="stylesheet">
+  
   <style>
     /* ✨ FUN ANIMATED BACKGROUND (Dark Mode Edition) */
     body {
       background: linear-gradient(-45deg, #2b1055, #110022, #0a192f, #1a0b2e);
       background-size: 400% 400%;
       animation: gradientBG 15s ease infinite;
-    }
-
-    /* 🧶 THE HOLY TRINITY DOODLES: Crochet, Iced Coffee, Computers */
-    body::before {
-      content: "🧶  💻  🧋  ⌨️  🧶  🥤  🖥️  🧶  ☕  💻  🧊  🖱️"; 
-      position: fixed;
-      top: 0; left: 0; right: 0; bottom: 0;
-      z-index: -1; 
-      font-size: 70px;
-      line-height: 2.5;
-      opacity: 0.12; 
-      text-align: center;
-      word-wrap: break-word;
-      pointer-events: none;
     }
 
     @keyframes gradientBG {
@@ -45,18 +35,42 @@
       z-index: 999;
     }
 
+    /* 🧶 LIVE SQUIGGLEVISION DOODLE LAYER */
+    .doodle-container {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      z-index: -1; 
+      font-size: 75px;
+      line-height: 2.6;
+      opacity: 0.12; 
+      text-align: center;
+      word-wrap: break-word;
+      pointer-events: none;
+      user-select: none;
+      animation: squigglevision 0.35s infinite; /* Forces emojis to vibrate like real pencil sketches */
+    }
+
+    /* 🎬 THE HAND-DRAWN JITTER LOOP */
+    @keyframes squigglevision {
+      0% { filter: url(#sketch-1); }
+      33% { filter: url(#sketch-2); }
+      66% { filter: url(#sketch-3); }
+      100% { filter: url(#sketch-1); }
+    }
+
     /* 🎀 MAXIMUM CUTE SIDEBAR CONFIGURATION */
     .sidebar { 
       background-color: rgba(25, 15, 40, 0.65) !important; 
       backdrop-filter: blur(20px); 
-      border-right: 2px dashed rgba(187, 134, 252, 0.3) !important; /* Cute dashed border */
-      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      border-right: 2px dashed rgba(187, 134, 252, 0.3) !important; /* Cute notebook perforation style */
+      font-family: 'Architects Daughter', cursive, sans-serif !important; /* Entire menu is now handwritten! */
     }
 
     /* Sidebar Header/Title area */
     .sidebar .app-name {
-      font-size: 1.2rem !important;
+      font-size: 1.3rem !important;
       font-weight: bold;
+      font-family: 'Architects Daughter', cursive, sans-serif !important;
       background: linear-gradient(45deg, #bb86fc, #ff79c6);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -75,7 +89,6 @@
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
-    /* ⚡ HOVER MATRIX */
     .markdown-section:hover {
       transform: translateY(-4px);
       box-shadow: 0 20px 40px rgba(187, 134, 252, 0.15);
@@ -85,7 +98,7 @@
     /* 🍦 CUTE PUFF-CLOUD LINKS */
     .sidebar-nav li a {
       transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
-      border-radius: 12px; /* Extra rounded edge for bubble effect */
+      border-radius: 12px; 
       padding: 8px 12px !important;
       margin: 4px 10px;
       color: #e2e8f0 !important;
@@ -99,7 +112,6 @@
       text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
     }
 
-    /* Highlighted active link state */
     .sidebar-nav li.active > a {
       background: linear-gradient(90deg, rgba(187, 134, 252, 0.3), rgba(255, 121, 198, 0.1)) !important;
       color: #ff79c6 !important;
@@ -107,7 +119,6 @@
       border-left: 4px solid #ff79c6 !important;
     }
 
-    /* 💜 CUSTOM ACCORDION HEART TOGGLES */
     .sidebar-nav .app-sub-sidebar li::before {
       content: "🌸" !important;
       font-size: 10px;
@@ -133,7 +144,13 @@
   </style>
 </head>
 <body>
+  
+  <div class="doodle-container">
+    🧶 💻 🧋 ⌨️ 🧶 🥤 🖥️ 🧶 ☕ 💻 🧊 🖱️ 🧶 💻 🧋 ⌨️ 🧶 🥤 🖥️ 🧶 ☕ 💻 🧊 🖱️
+  </div>
+
   <div id="app"></div>
+  
   <script>
     window.$docsify = {
       name: '🛡️ Audi\'s InfoSec Command Center',
@@ -143,5 +160,23 @@
     }
   </script>
   <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
+
+  <svg style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <filter id="sketch-1">
+        <feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="2" seed="1" result="noise" />
+        <feDisplacementMap in="SourceGraphic" in2="noise" scale="6" xChannelSelector="R" yChannelSelector="G" />
+      </filter>
+      <filter id="sketch-2">
+        <feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="2" seed="5" result="noise" />
+        <feDisplacementMap in="SourceGraphic" in2="noise" scale="5" xChannelSelector="R" yChannelSelector="G" />
+      </filter>
+      <filter id="sketch-3">
+        <feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="2" seed="10" result="noise" />
+        <feDisplacementMap in="SourceGraphic" in2="noise" scale="6" xChannelSelector="R" yChannelSelector="G" />
+      </filter>
+    </defs>
+  </svg>
+
 </body>
 </html>
