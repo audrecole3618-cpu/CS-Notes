@@ -10,6 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   
   <style>
     /* ✨ FUN ANIMATED BACKGROUND (Dark Mode Edition) */
@@ -35,29 +36,40 @@
       z-index: 999;
     }
 
-    /* 🧶 LIVE SQUIGGLEVISION DOODLE LAYER */
-    .doodle-container {
+    /* 🎨 REAL SKETCH DOODLE WALLPAPER CONTAINER */
+    .doodle-grid {
       position: fixed;
-      top: 0; left: 0; right: 0; bottom: 0;
-      z-index: 998; 
-      font-size: 85px; /* Slightly bigger so you see the sketch lines */
-      line-height: 2.8;
-      opacity: 0.15; 
-      color: #bb86fc; /* 🪶 Forces them to look like they were drawn with a neon-purple gel pen! */
-      text-shadow: 0 0 8px rgba(187, 134, 252, 0.4);
-      text-align: center;
-      word-wrap: break-word;
-      pointer-events: none; 
+      top: 0; left: 0; width: 100vw; height: 100vh;
+      z-index: 998;
+      pointer-events: none;
       user-select: none;
-      animation: squigglevision 0.3s infinite; 
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      grid-template-rows: repeat(5, 1fr);
+      gap: 20px;
+      padding: 40px;
+      box-sizing: border-box;
+      animation: squigglevision 0.35s infinite;
     }
 
-    /* 🎬 THE HAND-DRAWN JITTER LOOP */
+    /* Styling for the fine-ink sketch items */
+    .doodle-grid i {
+      font-size: 55px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: transparent;
+      /* This creates the transparent cutout look with a fine purple-ink pen outline! */
+      -webkit-text-stroke: 2px rgba(187, 134, 252, 0.22); 
+      filter: drop-shadow(0 0 4px rgba(187, 134, 252, 0.1));
+    }
+
+    /* 🎬 THE HAND-DRAWN JITTER LOOP (Warping the vector lines like paper sketches) */
     @keyframes squigglevision {
-      0% { filter: url(#sketch-1); }
-      33% { filter: url(#sketch-2); }
-      66% { filter: url(#sketch-3); }
-      100% { filter: url(#sketch-1); }
+      0% { filter: url(#sketch-1); transform: rotate(0deg); }
+      33% { filter: url(#sketch-2); transform: rotate(0.5deg) translate(1px, -1px); }
+      66% { filter: url(#sketch-3); transform: rotate(-0.5deg) translate(-1px, 1px); }
+      100% { filter: url(#sketch-1); transform: rotate(0deg); }
     }
 
     /* 🎀 MAXIMUM CUTE SIDEBAR CONFIGURATION */
@@ -68,7 +80,6 @@
       font-family: 'Architects Daughter', cursive, sans-serif !important; 
     }
 
-    /* Sidebar Header/Title area */
     .sidebar .app-name {
       font-size: 1.3rem !important;
       font-weight: bold;
@@ -81,7 +92,7 @@
     }
     
     .markdown-section { 
-      background-color: rgba(25, 25, 25, 0.8); 
+      background-color: rgba(25, 25, 25, 0.82); 
       padding: 40px !important; 
       border-radius: 24px; 
       box-shadow: 0 15px 35px rgba(0,0,0,0.6); 
@@ -111,7 +122,6 @@
       color: #ffffff !important;
       padding-left: 20px !important;
       box-shadow: 0 4px 15px rgba(187, 134, 252, 0.3);
-      text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
     }
 
     .sidebar-nav li.active > a {
@@ -128,29 +138,25 @@
     }
 
     /* 👾 CUSTOM NEON SCROLLBAR */
-    ::-webkit-scrollbar {
-      width: 10px;
-      height: 10px;
-    }
-    ::-webkit-scrollbar-track {
-      background: rgba(10, 10, 20, 0.5);
-    }
-    ::-webkit-scrollbar-thumb {
-      background: rgba(187, 134, 252, 0.4);
-      border-radius: 10px;
-      border: 2px solid rgba(10, 10, 20, 0.5);
-    }
-    ::-webkit-scrollbar-thumb:hover {
-      background: rgba(187, 134, 252, 0.8);
-    }
+    ::-webkit-scrollbar { width: 10px; height: 10px; }
+    ::-webkit-scrollbar-track { background: rgba(10, 10, 20, 0.5); }
+    ::-webkit-scrollbar-thumb { background: rgba(187, 134, 252, 0.4); border-radius: 10px; }
   </style>
 </head>
 <body>
   
-  <div class="doodle-container">
-    🪢 💻 ☕ ⚿ 🪢 🥤 🖥 🪢 ☕ 💻 ⚙ ⌨ 🪢 💻 ☕ ⚿ 🪢 🥤 🖥 🪢 ☕ 💻 ⚙ ⌨
-    🪢 💻 ☕ ⚿ 🪢 🥤 🖥 🪢 ☕ 💻 ⚙ ⌨ 🪢 💻 ☕ ⚿ 🪢 🥤 🖥 🪢 ☕ 💻 ⚙ ⌨
-    🪢 💻 ☕ ⚿ 🪢 🥤 🖥 🪢 ☕ 💻 ⚙ ⌨ 🪢 💻 ☕ ⚿ 🪢 🥤 🖥 🪢 ☕ 💻 ⚙ ⌨
+  <div class="doodle-grid">
+    <i class="fa-solid fa-scroll"></i>       <i class="fa-solid fa-laptop"></i>       <i class="fa-solid fa-mug-hot"></i>
+    <i class="fa-solid fa-microchip"></i>    <i class="fa-solid fa-scissors"></i>     <i class="fa-solid fa-glass-water"></i>
+    
+    <i class="fa-solid fa-whiskey-glass"></i> <i class="fa-solid fa-terminal"></i>     <i class="fa-solid fa-circle-nodes"></i>
+    <i class="fa-solid fa-cubes"></i>        <i class="fa-solid fa-lines-leaning"></i> <i class="fa-solid fa-mug-saucer"></i>
+    
+    <i class="fa-solid fa-desktop"></i>      <i class="fa-solid fa-seedling"></i>      <i class="fa-solid fa-keyboard"></i>
+    <i class="fa-solid fa-wind"></i>         <i class="fa-solid fa-server"></i>        <i class="fa-solid fa-cloud"></i>
+
+    <i class="fa-solid fa-ice-cream"></i>    <i class="fa-solid fa-database"></i>      <i class="fa-solid fa-heart"></i>
+    <i class="fa-solid fa-code"></i>         <i class="fa-solid fa-wrench"></i>        <i class="fa-solid fa-network-wired"></i>
   </div>
 
   <div id="app"></div>
@@ -168,16 +174,16 @@
   <svg style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg">
     <defs>
       <filter id="sketch-1">
-        <feTurbulence type="fractalNoise" baseFrequency="0.05" numOctaves="2" seed="2" result="noise" />
-        <feDisplacementMap in="SourceGraphic" in2="noise" scale="7" xChannelSelector="R" yChannelSelector="G" />
+        <feTurbulence type="fractalNoise" baseFrequency="0.05" numOctaves="2" seed="3" result="noise" />
+        <feDisplacementMap in="SourceGraphic" in2="noise" scale="5" xChannelSelector="R" yChannelSelector="G" />
       </filter>
       <filter id="sketch-2">
-        <feTurbulence type="fractalNoise" baseFrequency="0.06" numOctaves="2" seed="7" result="noise" />
-        <feDisplacementMap in="SourceGraphic" in2="noise" scale="6" xChannelSelector="R" yChannelSelector="G" />
+        <feTurbulence type="fractalNoise" baseFrequency="0.05" numOctaves="2" seed="8" result="noise" />
+        <feDisplacementMap in="SourceGraphic" in2="noise" scale="4" xChannelSelector="R" yChannelSelector="G" />
       </filter>
       <filter id="sketch-3">
-        <feTurbulence type="fractalNoise" baseFrequency="0.05" numOctaves="2" seed="12" result="noise" />
-        <feDisplacementMap in="SourceGraphic" in2="noise" scale="7" xChannelSelector="R" yChannelSelector="G" />
+        <feTurbulence type="fractalNoise" baseFrequency="0.05" numOctaves="2" seed="13" result="noise" />
+        <feDisplacementMap in="SourceGraphic" in2="noise" scale="5" xChannelSelector="R" yChannelSelector="G" />
       </filter>
     </defs>
   </svg>
