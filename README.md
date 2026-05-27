@@ -2,7 +2,7 @@
 
 > "Caffeine in my cup, yarn on my desk, packets on my screen." 🧋🧶💻
 
-Welcome to the central operations repository. This vault serves as a decentralized knowledge base tracking computer science architectures, core Linux systems, and cybersecurity infrastructure models.
+Welcome to the central operations repository. This vault tracks my educational journey, computer science frameworks, and cybersecurity infrastructure models.
 
 ---
 
@@ -11,12 +11,12 @@ Welcome to the central operations repository. This vault serves as a decentraliz
 Use the navigation sidebar on the left to securely pivot into different data sectors:
 
 * **[Home Page](README.md):** You are currently here. Operational briefing dashboard.
-* **[CS Crash Course](crash-course.md):** Complete 40-episode architectural database covering logic gates, instruction pipelining, operating systems, and network routing.
+* **[Crash Course CS](crash-course.md):** Complete 40-episode architectural database covering logic gates, instruction pipelining, and operating systems.
 
 ---
 
 ### ⚡ InfoSec Level-Up Checklist
-*Keep track of your training cycles here. Switch a `[ ]` to `[x]` when a task is fully operational!*
+*Keep track of your training cycles here. Switch a `[ ]` to `[x]` in VS Code when a task is fully operational!*
 
 #### 💻 Phase 1: Core Architecture
 - [ ] Understand basic logic gates (AND, OR, NOT)
@@ -34,4 +34,3 @@ Use the navigation sidebar on the left to securely pivot into different data sec
 - [ ] Classify malware types: Viruses vs. Worms vs. Trojans
 - [ ] Spot a Social Engineering / Phishing payload template
 - [ ] Explain Asymmetric Cryptography (Public vs. Private keys)
-- [ ] Run a simulated local network mapping cycle
