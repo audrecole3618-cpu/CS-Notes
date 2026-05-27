@@ -36,7 +36,7 @@
       z-index: 999;
     }
 
-    /* 🎨 REAL SKETCH DOODLE WALLPAPER CONTAINER */
+    /* 🎨 STATIC SKETCH DOODLE WALLPAPER CONTAINER */
     .doodle-grid {
       position: fixed;
       top: 0; left: 0; width: 100vw; height: 100vh;
@@ -49,27 +49,19 @@
       gap: 20px;
       padding: 40px;
       box-sizing: border-box;
-      animation: squigglevision 0.35s infinite;
+      /* 🚨 REMOVED SQUIGGLEVISION MOTION - COMPLETELY STATIC NOW */
     }
 
-    /* Styling for the fine-ink sketch items */
+    /* Styling for the fine-ink sketch items matching the reference images */
     .doodle-grid i {
       font-size: 55px;
       display: flex;
       align-items: center;
       justify-content: center;
       color: transparent;
-      /* This creates the transparent cutout look with a fine purple-ink pen outline! */
-      -webkit-text-stroke: 2px rgba(187, 134, 252, 0.22); 
-      filter: drop-shadow(0 0 4px rgba(187, 134, 252, 0.1));
-    }
-
-    /* 🎬 THE HAND-DRAWN JITTER LOOP (Warping the vector lines like paper sketches) */
-    @keyframes squigglevision {
-      0% { filter: url(#sketch-1); transform: rotate(0deg); }
-      33% { filter: url(#sketch-2); transform: rotate(0.5deg) translate(1px, -1px); }
-      66% { filter: url(#sketch-3); transform: rotate(-0.5deg) translate(-1px, 1px); }
-      100% { filter: url(#sketch-1); transform: rotate(0deg); }
+      /* ✒️ BLACK/DARK GEL-PEN INK OUTLINE */
+      -webkit-text-stroke: 2px rgba(42, 42, 53, 0.75); 
+      filter: drop-shadow(1px 1px 1px rgba(255, 255, 255, 0.05)); /* Subtle paper-etch contrast */
     }
 
     /* 🎀 MAXIMUM CUTE SIDEBAR CONFIGURATION */
@@ -92,7 +84,7 @@
     }
     
     .markdown-section { 
-      background-color: rgba(25, 25, 25, 0.82); 
+      background-color: rgba(25, 25, 25, 0.85); 
       padding: 40px !important; 
       border-radius: 24px; 
       box-shadow: 0 15px 35px rgba(0,0,0,0.6); 
@@ -170,23 +162,6 @@
     }
   </script>
   <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
-
-  <svg style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg">
-    <defs>
-      <filter id="sketch-1">
-        <feTurbulence type="fractalNoise" baseFrequency="0.05" numOctaves="2" seed="3" result="noise" />
-        <feDisplacementMap in="SourceGraphic" in2="noise" scale="5" xChannelSelector="R" yChannelSelector="G" />
-      </filter>
-      <filter id="sketch-2">
-        <feTurbulence type="fractalNoise" baseFrequency="0.05" numOctaves="2" seed="8" result="noise" />
-        <feDisplacementMap in="SourceGraphic" in2="noise" scale="4" xChannelSelector="R" yChannelSelector="G" />
-      </filter>
-      <filter id="sketch-3">
-        <feTurbulence type="fractalNoise" baseFrequency="0.05" numOctaves="2" seed="13" result="noise" />
-        <feDisplacementMap in="SourceGraphic" in2="noise" scale="5" xChannelSelector="R" yChannelSelector="G" />
-      </filter>
-    </defs>
-  </svg>
 
 </body>
 </html>
