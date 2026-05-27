@@ -1,17 +1,16 @@
 * [🎓 mySNHU Portal](https://my.snhu.edu)
 * [🏠 Home](README.md)
 
-* [📚 CompSci Basics]
+* 📚 CompSci Basics
   * [Intro to CS](intro.md)
   * [Binary & Data](binary.md)
-...[🏠 Home](README.md)
-* [📚 CompSci Basics]
-   * [Programming Foundations](programming-basics.md)
-  * [Intro to CS](intro.md)
-  * [Binary & Data](binary.md)
-* [🛡️ InfoSec]
+  * [Programming Foundations](programming-basics.md)
+  * [Crash Course CS](crash-course.md)
+
+* 🛡️ InfoSec
   * [Security Fundamentals](infosec.md)
   * [Networking 101](networking.md)
   * [InfoSec Glossary](glossary.md)
-* [💻 Technical Skills]
+
+* 💻 Technical Skills
   * [Linux Survival Kit](linux.md)
