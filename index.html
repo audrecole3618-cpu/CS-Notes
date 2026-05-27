@@ -45,18 +45,29 @@
       z-index: 999;
     }
 
-    /* 🧼 CLEANUP: Frosted glass effect so the dark theme pops over the doodles */
+    /* 🎀 MAXIMUM CUTE SIDEBAR CONFIGURATION */
     .sidebar { 
-      background-color: rgba(20, 20, 20, 0.6) !important; 
-      backdrop-filter: blur(15px); 
-      border-right: 1px solid rgba(187, 134, 252, 0.1) !important;
-      transition: all 0.3s ease;
+      background-color: rgba(25, 15, 40, 0.65) !important; 
+      backdrop-filter: blur(20px); 
+      border-right: 2px dashed rgba(187, 134, 252, 0.3) !important; /* Cute dashed border */
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    /* Sidebar Header/Title area */
+    .sidebar .app-name {
+      font-size: 1.2rem !important;
+      font-weight: bold;
+      background: linear-gradient(45deg, #bb86fc, #ff79c6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      padding: 10px;
+      text-align: center;
     }
     
     .markdown-section { 
       background-color: rgba(25, 25, 25, 0.8); 
       padding: 40px !important; 
-      border-radius: 20px; 
+      border-radius: 24px; 
       box-shadow: 0 15px 35px rgba(0,0,0,0.6); 
       max-width: 900px;
       margin-top: 40px;
@@ -64,23 +75,43 @@
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
-    /* ⚡ HOVER MATRIX: Interactive feedback loops */
+    /* ⚡ HOVER MATRIX */
     .markdown-section:hover {
       transform: translateY(-4px);
       box-shadow: 0 20px 40px rgba(187, 134, 252, 0.15);
       border-color: rgba(187, 134, 252, 0.2);
     }
 
+    /* 🍦 CUTE PUFF-CLOUD LINKS */
     .sidebar-nav li a {
-      transition: all 0.25s ease !important;
-      border-radius: 6px;
-      padding: 6px 10px !important;
+      transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+      border-radius: 12px; /* Extra rounded edge for bubble effect */
+      padding: 8px 12px !important;
+      margin: 4px 10px;
+      color: #e2e8f0 !important;
     }
 
     .sidebar-nav li a:hover {
-      background: rgba(187, 134, 252, 0.15) !important;
-      padding-left: 18px !important; /* Cool slide-over effect */
-      color: #bb86fc !important;
+      background: rgba(187, 134, 252, 0.25) !important;
+      color: #ffffff !important;
+      padding-left: 20px !important;
+      box-shadow: 0 4px 15px rgba(187, 134, 252, 0.3);
+      text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+    }
+
+    /* Highlighted active link state */
+    .sidebar-nav li.active > a {
+      background: linear-gradient(90deg, rgba(187, 134, 252, 0.3), rgba(255, 121, 198, 0.1)) !important;
+      color: #ff79c6 !important;
+      font-weight: bold;
+      border-left: 4px solid #ff79c6 !important;
+    }
+
+    /* 💜 CUSTOM ACCORDION HEART TOGGLES */
+    .sidebar-nav .app-sub-sidebar li::before {
+      content: "🌸" !important;
+      font-size: 10px;
+      margin-right: 5px;
     }
 
     /* 👾 CUSTOM NEON SCROLLBAR */
@@ -95,11 +126,9 @@
       background: rgba(187, 134, 252, 0.4);
       border-radius: 10px;
       border: 2px solid rgba(10, 10, 20, 0.5);
-      transition: background 0.3s ease;
     }
     ::-webkit-scrollbar-thumb:hover {
       background: rgba(187, 134, 252, 0.8);
-      box-shadow: 0 0 10px #bb86fc;
     }
   </style>
 </head>
@@ -108,7 +137,7 @@
   <script>
     window.$docsify = {
       name: '🛡️ Audi\'s InfoSec Command Center',
-      themeColor: '#bb86fc', // A cool neon purple/lavender
+      themeColor: '#bb86fc', 
       loadSidebar: true,
       subMaxLevel: 2
     }
