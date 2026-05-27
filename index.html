@@ -23,7 +23,7 @@
       z-index: -1; 
       font-size: 70px;
       line-height: 2.5;
-      opacity: 0.15; 
+      opacity: 0.12; 
       text-align: center;
       word-wrap: break-word;
       pointer-events: none;
@@ -35,18 +35,71 @@
       100% { background-position: 0% 50%; }
     }
 
+    /* 🛸 GLOWING TOP ACCENT BAR */
+    body::after {
+      content: "";
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      height: 5px;
+      background: linear-gradient(90deg, #bb86fc, #03dac6, #ff79c6);
+      z-index: 999;
+    }
+
     /* 🧼 CLEANUP: Frosted glass effect so the dark theme pops over the doodles */
     .sidebar { 
       background-color: rgba(20, 20, 20, 0.6) !important; 
-      backdrop-filter: blur(10px); 
+      backdrop-filter: blur(15px); 
+      border-right: 1px solid rgba(187, 134, 252, 0.1) !important;
+      transition: all 0.3s ease;
     }
+    
     .markdown-section { 
-      background-color: rgba(30, 30, 30, 0.75); 
+      background-color: rgba(25, 25, 25, 0.8); 
       padding: 40px !important; 
       border-radius: 20px; 
-      box-shadow: 0 10px 30px rgba(0,0,0,0.5); 
+      box-shadow: 0 15px 35px rgba(0,0,0,0.6); 
       max-width: 900px;
       margin-top: 40px;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    /* ⚡ HOVER MATRIX: Interactive feedback loops */
+    .markdown-section:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 40px rgba(187, 134, 252, 0.15);
+      border-color: rgba(187, 134, 252, 0.2);
+    }
+
+    .sidebar-nav li a {
+      transition: all 0.25s ease !important;
+      border-radius: 6px;
+      padding: 6px 10px !important;
+    }
+
+    .sidebar-nav li a:hover {
+      background: rgba(187, 134, 252, 0.15) !important;
+      padding-left: 18px !important; /* Cool slide-over effect */
+      color: #bb86fc !important;
+    }
+
+    /* 👾 CUSTOM NEON SCROLLBAR */
+    ::-webkit-scrollbar {
+      width: 10px;
+      height: 10px;
+    }
+    ::-webkit-scrollbar-track {
+      background: rgba(10, 10, 20, 0.5);
+    }
+    ::-webkit-scrollbar-thumb {
+      background: rgba(187, 134, 252, 0.4);
+      border-radius: 10px;
+      border: 2px solid rgba(10, 10, 20, 0.5);
+      transition: background 0.3s ease;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: rgba(187, 134, 252, 0.8);
+      box-shadow: 0 0 10px #bb86fc;
     }
   </style>
 </head>
