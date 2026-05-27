@@ -39,15 +39,15 @@
     .doodle-container {
       position: fixed;
       top: 0; left: 0; right: 0; bottom: 0;
-      z-index: -1; 
+      z-index: 998; /* 🚨 CHANGER: Pulled to the absolute front layer! */
       font-size: 75px;
       line-height: 2.6;
-      opacity: 0.12; 
+      opacity: 0.08; /* Slightly lighter so it never blocks your actual text */
       text-align: center;
       word-wrap: break-word;
-      pointer-events: none;
+      pointer-events: none; /* Let's you click right through them! */
       user-select: none;
-      animation: squigglevision 0.35s infinite; /* Forces emojis to vibrate like real pencil sketches */
+      animation: squigglevision 0.35s infinite; 
     }
 
     /* 🎬 THE HAND-DRAWN JITTER LOOP */
@@ -62,8 +62,8 @@
     .sidebar { 
       background-color: rgba(25, 15, 40, 0.65) !important; 
       backdrop-filter: blur(20px); 
-      border-right: 2px dashed rgba(187, 134, 252, 0.3) !important; /* Cute notebook perforation style */
-      font-family: 'Architects Daughter', cursive, sans-serif !important; /* Entire menu is now handwritten! */
+      border-right: 2px dashed rgba(187, 134, 252, 0.3) !important; 
+      font-family: 'Architects Daughter', cursive, sans-serif !important; 
     }
 
     /* Sidebar Header/Title area */
@@ -146,6 +146,8 @@
 <body>
   
   <div class="doodle-container">
+    🧶 💻 🧋 ⌨️ 🧶 🥤 🖥️ 🧶 ☕ 💻 🧊 🖱️ 🧶 💻 🧋 ⌨️ 🧶 🥤 🖥️ 🧶 ☕ 💻 🧊 🖱️
+    🧶 💻 🧋 ⌨️ 🧶 🥤 🖥️ 🧶 ☕ 💻 🧊 🖱️ 🧶 💻 🧋 ⌨️ 🧶 🥤 🖥️ 🧶 ☕ 💻 🧊 🖱️
     🧶 💻 🧋 ⌨️ 🧶 🥤 🖥️ 🧶 ☕ 💻 🧊 🖱️ 🧶 💻 🧋 ⌨️ 🧶 🥤 🖥️ 🧶 ☕ 💻 🧊 🖱️
   </div>
 
